@@ -1,0 +1,246 @@
+{
+  "missing_pct": {
+    "Pregnancies": 0.0,
+    "Glucose": 0.7,
+    "BloodPressure": 4.6,
+    "SkinThickness": 29.6,
+    "Insulin": 48.7,
+    "BMI": 1.4,
+    "DiabetesPedigreeFunction": 0.0,
+    "Age": 0.0,
+    "Outcome": 0.0
+  },
+  "outliers": {
+    "Pregnancies": 4,
+    "Glucose": 0,
+    "BloodPressure": 14,
+    "SkinThickness": 3,
+    "Insulin": 24,
+    "BMI": 8,
+    "DiabetesPedigreeFunction": 29,
+    "Age": 9
+  },
+  "class_counts": {
+    "0": 500,
+    "1": 268
+  },
+  "corr_with_outcome": {
+    "Glucose": 0.495,
+    "BMI": 0.314,
+    "Insulin": 0.303,
+    "SkinThickness": 0.259,
+    "Age": 0.238,
+    "Pregnancies": 0.222,
+    "DiabetesPedigreeFunction": 0.174,
+    "BloodPressure": 0.171
+  },
+  "f_scores": {
+    "Glucose_BMI": 252.9,
+    "Glucose": 217.8,
+    "BMI": 74.2,
+    "Insulin": 39.4,
+    "Age": 37.6,
+    "SkinThickness": 35.5,
+    "Pregnancies": 27.7,
+    "BloodPressure": 21.3,
+    "DiabetesPedigreeFunction": 17.2,
+    "Age_Preg": 12.2
+  },
+  "feature_set_cv": {
+    "Original 8 features": 0.8434,
+    "Original + engineered (10)": 0.8422,
+    "Top-6 by F-score": 0.8306
+  },
+  "chosen_feature_set": "Original 8 features",
+  "cv_table": {
+    "Baseline (majority)": {
+      "Accuracy": 0.651,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1": 0.0,
+      "AUC": 0.5
+    },
+    "Logistic Regression": {
+      "Accuracy": 0.788,
+      "Precision": 0.764,
+      "Recall": 0.575,
+      "F1": 0.655,
+      "AUC": 0.843
+    },
+    "LDA": {
+      "Accuracy": 0.787,
+      "Precision": 0.758,
+      "Recall": 0.575,
+      "F1": 0.653,
+      "AUC": 0.843
+    },
+    "QDA": {
+      "Accuracy": 0.754,
+      "Precision": 0.681,
+      "Recall": 0.561,
+      "F1": 0.613,
+      "AUC": 0.82
+    }
+  },
+  "grid_search": {
+    "Logistic Regression": {
+      "params": "{'clf__C': 0.1, 'clf__penalty': 'l2'}",
+      "cv_auc": 0.8444
+    },
+    "LDA": {
+      "params": "{'clf__shrinkage': 0.3, 'clf__solver': 'lsqr'}",
+      "cv_auc": 0.8445
+    },
+    "QDA": {
+      "params": "{'clf__reg_param': 0.7}",
+      "cv_auc": 0.832
+    }
+  },
+  "test_table": {
+    "Baseline (majority)": {
+      "Accuracy": 0.649,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1": 0.0,
+      "AUC": 0.5,
+      "RMSE": 0.592,
+      "MAE": 0.351
+    },
+    "Logistic Regression": {
+      "Accuracy": 0.688,
+      "Precision": 0.565,
+      "Recall": 0.481,
+      "F1": 0.52,
+      "AUC": 0.81,
+      "RMSE": 0.417,
+      "MAE": 0.327
+    },
+    "LDA": {
+      "Accuracy": 0.701,
+      "Precision": 0.58,
+      "Recall": 0.537,
+      "F1": 0.558,
+      "AUC": 0.804,
+      "RMSE": 0.426,
+      "MAE": 0.314
+    },
+    "QDA": {
+      "Accuracy": 0.721,
+      "Precision": 0.604,
+      "Recall": 0.593,
+      "F1": 0.598,
+      "AUC": 0.78,
+      "RMSE": 0.445,
+      "MAE": 0.319
+    }
+  },
+  "confusion": {
+    "Logistic Regression": [
+      [
+        80,
+        20
+      ],
+      [
+        28,
+        26
+      ]
+    ],
+    "LDA": [
+      [
+        79,
+        21
+      ],
+      [
+        25,
+        29
+      ]
+    ],
+    "QDA": [
+      [
+        79,
+        21
+      ],
+      [
+        22,
+        32
+      ]
+    ]
+  },
+  "overfit": {
+    "Logistic Regression": {
+      "Train AUC": 0.851,
+      "Test AUC": 0.81,
+      "Gap": 0.041
+    },
+    "LDA": {
+      "Train AUC": 0.85,
+      "Test AUC": 0.804,
+      "Gap": 0.046
+    },
+    "QDA": {
+      "Train AUC": 0.839,
+      "Test AUC": 0.78,
+      "Gap": 0.058
+    }
+  },
+  "lr_coef": {
+    "Glucose": {
+      "Coefficient (scaled)": 1.019,
+      "Odds ratio": 2.77
+    },
+    "BMI": {
+      "Coefficient (scaled)": 0.58,
+      "Odds ratio": 1.786
+    },
+    "Pregnancies": {
+      "Coefficient (scaled)": 0.322,
+      "Odds ratio": 1.38
+    },
+    "DiabetesPedigreeFunction": {
+      "Coefficient (scaled)": 0.21,
+      "Odds ratio": 1.234
+    },
+    "Age": {
+      "Coefficient (scaled)": 0.158,
+      "Odds ratio": 1.171
+    },
+    "SkinThickness": {
+      "Coefficient (scaled)": 0.067,
+      "Odds ratio": 1.07
+    },
+    "Insulin": {
+      "Coefficient (scaled)": -0.003,
+      "Odds ratio": 0.997
+    },
+    "BloodPressure": {
+      "Coefficient (scaled)": -0.004,
+      "Odds ratio": 0.996
+    }
+  },
+  "threshold": {
+    "0.3": {
+      "Accuracy": 0.727,
+      "Precision": 0.579,
+      "Recall": 0.815,
+      "F1": 0.677
+    },
+    "0.4": {
+      "Accuracy": 0.734,
+      "Precision": 0.614,
+      "Recall": 0.648,
+      "F1": 0.631
+    },
+    "0.5": {
+      "Accuracy": 0.688,
+      "Precision": 0.565,
+      "Recall": 0.481,
+      "F1": 0.52
+    },
+    "0.6": {
+      "Accuracy": 0.747,
+      "Precision": 0.714,
+      "Recall": 0.463,
+      "F1": 0.562
+    }
+  }
+}
